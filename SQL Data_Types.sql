@@ -30,6 +30,8 @@ VALUES
 	SELECT bigint_col,int_col,smallint_col,tinyint_col FROM DataType;
 
 /*** 3)Decimal data type ***/
+--p is the precision which is the maximum total number of decimal digits that will be stored
+--s is the scale which is the number of decimal digits that will be stored to the right of the decimal point.
 alter table DataType add  dec_col DECIMAL (4, 2),
     num_col NUMERIC (4, 2);
 	insert into DataType(dec_col,num_col) values(10.25,20.05);
@@ -41,6 +43,8 @@ alter table DataType add  dec_col DECIMAL (4, 2),
 /**** Character strings data types ****/
 
 /*** 1)CHAR data type ***/
+--to store fixed length, non-Unicode string data
+--In this syntax, n defines the string length that ranges from 1 to 8,000.
 alter table DataType add  val CHAR(3);
 
 insert into DataType (val) values ('ABC');
@@ -49,6 +53,8 @@ insert into DataType (val) values ('A');
 select val, Len(val) len from datatype;
 
 /*** 2)VARCHAR data type ***/
+--used to store variable-length, non-Unicode string data. 
+--max defines the maximum storage size which is 231-1 bytes (2 GB).
 alter table datatype add val_varchar varchar(10);
 alter table datatype add val_varcharmax varchar(max);
 
