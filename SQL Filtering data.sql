@@ -276,9 +276,11 @@ from Customer
 Order by first_name,last_name;
 
 
-select first_name+' '+ last_name AS FullName
+select first_name+' '+ cast(phone As varchar(255)) AS FullName
 from Customer
 Order by first_name,last_name;
+
+
 
 select first_name+' '+ last_name AS 'Full Name'
 from Customer
